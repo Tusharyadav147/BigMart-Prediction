@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./static/index.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+    <script src="https://kit.fontawesome.com/37ca218f1d.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="./static/themes/logo/pngegg.png" type="image/x-icon">
+    <title>Prediction</title>
+</head>
+<body>
+
+<!-- order section starts  -->
+<section class="order" id="order">
+    <h1 class="heading">Store Sales Prediction</h1>
+    <form action="/predict" method="POST">
+        <div class="inputBox">
+            <div class="input">
+                <span>Item Identifier</span>
+                <input type="Item_Identifier" id="Item_Identifier" class="Item_Identifier" name="Item_Identifier" placeholder="Enter Item Identifier">
+            </div>
+            <div class="input">
+                <span>Item Weight</span>
+                <input type="Item_weight" name="Item_weight" placeholder="Enter Item Weight" required>
+            </div>
+        </div>
+        <div class="inputBox">
+            <div class="input">
+                <span>Item Fat Content</span>
+                <select class="Item_Fat_Content" id="Item_Fat_Content" name="Item_Fat_Content" required>
+                    <option value="#">Select</option>
+                    <option value="low_fat">Low Fat</option>
+                    <option value="regular_fat">Regular</option>
+                </select>
+            </div>
+            <div class="input">
+                <span>Item Visibility</span>
+                <input type="Item_Visibility" name="Item_Visibility" placeholder="Enter Item Visibility" required>
+            </div>
+        </div>
+        <div class="inputBox">
+            <div class="input">
+                <span>Item Type</span>
+                <select class="Item_Type" id="Item_Type" name="Item_Type" required>
+                    <option value="#">Select</option>
+                    <option value="dairy">Dairy</option>
+                    <option value="soft_drinks">Soft Drinks</option>
+                    <option value="meat">Meat</option>
+                    <option value="Fruits_and_vegetables">Fruits and Vegetables</option>
+                    <option value="household">Household</option>
+                    <option value="baking_goods">Baking Goods</option>
+                    <option value="snack_foods">Snack Foods</option>
+                    <option value="fronzen_foods">Frozen Foods</option>
+                    <option value="breakfast">Break Fast</option>
+                    <option value="health_and_hygiene">Health and Hygiene</option>
+                    <option value="hard_drinks">Hard Drinks</option>
+                    <option value="canned">Canned</option>
+                    <option value="breads">Breads</option>
+                    <option value="starchy_foods">Starchy Foods</option>
+                    <option value="seafood">Seafood</option>
+                    <option value="others">Others</option>
+                </select>
+            </div>
+            <div class="input">
+                <span>Item MRP (₹)</span>
+                <input type="Item_MRP" id="Item_MRP" min="1" name="Item_MRP" placeholder="₹0" required>
+            </div>
+        </div>
+        <div class="inputBox">
+            <div class="input">
+                <span>Outlet Identifier	</span>
+                <select class="Outlet_Identifier" id="Outlet_Identifier	" name="Outlet_Identifier" required>
+                    <option value="#">Select</option>
+                    <option value="OUT010">OUT010</option>
+                    <option value="OUT013">OUT013</option>
+                    <option value="OUT017">OUT017</option>
+                    <option value="OUT018">OUT018</option>
+                    <option value="OUT019">OUT019</option>
+                    <option value="OUT027">OUT027</option>
+                    <option value="OUT035">OUT035</option>
+                    <option value="OUT045">OUT045</option>
+                    <option value="OUT046">OUT046</option>
+                    <option value="OUT049">OUT049</option>
+                </select>
+            </div>
+            <div class="input">
+                <span>Outlet Establishment Year</span>
+                <input type="Outlet_Establishment_Year" name="Outlet_Establishment_Year" placeholder="Enter Outlet Establishment Year" >
+            </div>
+        </div>
+        <div class="inputBox">
+            <div class="input">
+                <span>Outlet Size</span>
+                <select class="Outlet_Size" id="Outlet_Size" name="Outlet_Size" required>
+                    <option value="#">Select</option>
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+            </div>
+            <div class="input">
+                <span>Outlet Location Type</span>
+                <select class="Outlet_Location_Type" id="Outlet_Location_Type" name="Outlet_Location_Type" required>
+                    <option value="#">Select</option>
+                    <option value="tier1">Tier 1</option>
+                    <option value="tier2">Tier 2</option>
+                    <option value="tier3">Tier 3</option>
+                </select>
+            </div>
+        </div>
+        <div class="inputBox">
+            <div class="input">
+                <span>Outlet Type</span>
+                <select class="Outlet_Type" id="Outlet_Type" name="Outlet_Type" required>
+                    <option value="#">Select</option>
+                    <option value="Supermarket_Type1">Supermarket Type1</option>
+                    <option value="Supermarket_Type2">Supermarket Type2</option>
+                    <option value="Supermarket_Type3">Supermarket Type3</option>
+                    <option value="Grocery_Store">Grocery Store</option>
+                </select>
+            </div>
+            <div class="input">
+                <span>Given Data</span>
+                <h3>{{data}}</h3>
+            </div>
+        </div>
+        <div class="inputBox">
+            <div class="input">
+                <button class="btn">Predict</button>
+            </div>
+            <div class="value input">
+                <h2>Predicted Value :- {{value}}</h2>
+            </div>
+        </div>
+    </form>
+</section>
+<!-- order section ends -->
+</body>
+</html>
