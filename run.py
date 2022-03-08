@@ -1,4 +1,4 @@
-from flask import Flask, redirect, render_template
+from flask import Flask, redirect, render_template, request
 import pickle
 
 dict_outlet_size = {"medium": 1, "small": 2, "high": 0}
