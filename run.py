@@ -15,7 +15,7 @@ scaler = pickle.load(open("Standarscaler.pkl", "rb"))
 app = Flask(__name__)
 @app.route("/", methods = ["POST", "GET"])
 def home():
-    return render_template("index.html", value = 0, data = "Null")
+    return render_template("index.html", value = 0, data = [])
 
 @app.route("/predict", methods = ["POST", "GET"])
 def predict():
