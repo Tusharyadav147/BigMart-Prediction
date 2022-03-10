@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url("./3.jpg") no-repeat center fixed;
+    background-size: 100% 100%;
+}
+
+.container{
+    color: white;
+    position: absolute;
+    top:30%;
+    left: 36%;
+    background-color: rgba(2, 1, 0, 0.774);
+    border-radius: 1rem;
+    padding-top: 1rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    height: 47%;
+    width: 30%;
+}
+
+.container2{
+    top: 50%;
+}
+
+.container h1{
+    display: inline-block;
+    font-size: 40px;
+    margin-bottom: 1rem ;
+    border-bottom: 5px solid purple;
+}
+
+.box{
+    margin-top: 1.5rem;
+    width: 100%;
+    border-bottom: 2px solid purple;
+}
+
+.box input{
+    background: none;
+    width: 82%;
+    border: none;
+    font-size: 18px;
+}
+
+.box input:hover{
+    background-color: white;
+}
+
+.box i{
+    margin-top: 1rem;
+    text-align: center;
+    padding: 0px 12px;
+}
+
+.btn{
+    cursor: pointer;
+    border-radius: 2rem;
+    border: 2px solid black;
+    outline: none;
+    width: 30%;
+    margin-top: 2rem;
+    padding: .5rem;
+    position: absolute;
+}
+
+.btn:hover{
+    background-color: rgb(206, 229, 250);
+}
+
+@media only screen and (max-width:768px){
+    .container {
+        color: white;
+        position: absolute;
+        top: 14%;
+        left: 10%;
+    }
+    .container h1 {
+        display: inline-block;
+        color: silver;
+        margin-left: 0rem;
+        margin-top: 3rem;
+        margin-bottom: 0rem;
+        border-bottom: 5px solid rgba(230, 183, 231, 0.863);
+    }
+    .box input {
+        background: none;
+        width: 73%;
+        border: none;
+        font-size: 18px;
+    }
+    .box {
+        margin-top: 1.5rem;
+        width: 90%;
+        border-bottom: 2px solid purple;
+    }
+    .btn1 {
+        cursor: pointer;
+        border-radius: 2rem;
+        border: 2px solid black;
+        outline: none;
+        width: 40%;
+        margin-left: 8rem;
+        padding: .5rem;
+        margin-top: 2rem;
+        position: absolute;
+    }
+}

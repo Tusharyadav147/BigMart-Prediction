@@ -1,6 +1,8 @@
 from flask import Flask, redirect, render_template, request
 import pickle
 
+from numpy import require
+
 dict_outlet_size = {"medium": 1, "small": 2, "high": 0}
 dict_item_fat = {"low_fat": 0, "regular_fat": 1}
 dict_location = {"tier1":0, "tier2": 1,"tier3": 2}
@@ -15,7 +17,27 @@ scaler = pickle.load(open("Standarscaler.pkl", "rb"))
 app = Flask(__name__)
 @app.route("/", methods = ["POST", "GET"])
 def home():
-    return render_template("index.html", value = 0, data = [])
+    return render_template("login.html")
+
+@app.route("/index", methods = ["POST", "GET"])
+def index():
+    return render_template("index.html", value =0, data = [ ])
+
+@app.route("/loginresult", methods = ["POST", "GET"])
+def login():
+    try:
+        if request.method == "POST":
+            details = request.form
+            email = details["email"]
+            password = details["password"]
+            print(email)
+            print(password)
+            if email == "admin147@master.com" and password == "Admin4u$":
+                return render_template("index.html", value =0, data = [ ])
+            else:
+                return redirect("/")
+    except:
+        return redirect("/")
 
 @app.route("/predict", methods = ["POST", "GET"])
 def predict():
@@ -37,7 +59,7 @@ def predict():
             data = []
             for i in request.form.values():
                 data.append(i)
-    
+
             scaled = scaler.transform([[Item_Weight,Item_Fat_Content,Item_Visibility,Item_Type,Item_MRP,Outlet_Identifier,Outlet_Establishment_Year,Outlet_Size,Outlet_Location_Type,Outlet_Type]])
             value = model.predict(scaled)[0]
 
