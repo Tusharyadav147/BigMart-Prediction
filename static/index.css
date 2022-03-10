@@ -65,7 +65,7 @@ section{
     background:var(--yellow);
 }
 
-/* Order css */
+
 body{
     background-image: url("./background.jpg");
     background-size: 100% 100%;
@@ -163,5 +163,3 @@ body{
     background-color: rgba(206, 162, 19, 0.822);
     border-radius: 1rem;
 }
-
-/* order css */
