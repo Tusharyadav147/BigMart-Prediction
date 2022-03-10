@@ -68,6 +68,8 @@ def predict():
 
             cursor.execute('INSERT INTO BigMartData values(?,?,?,?,?,?,?,?,?,?,?,?)',(Item_Identifier,Item_Weight, feature["Item_Fat_Content"] , Item_Visibility, feature["Item_Type"], Item_MRP, feature["Outlet_Identifier"], Outlet_Establishment_Year,feature["Outlet_Size"], feature["Outlet_Location_Type"], feature["Outlet_Type"], float(value)))
             connection.commit()
+            for i in cursor.execute("SELECT * FROM BigMartData"):
+                print(i)
             cursor.close()
 
             return render_template("result.html", value =value, data = data)
