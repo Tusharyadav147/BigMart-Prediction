@@ -1,7 +1,9 @@
 from flask import Flask, redirect, render_template, request
+import sqlite3
 import pickle
 
-from numpy import require
+connection = sqlite3.connect("datastore.db", check_same_thread=False)
+cursor = connection.cursor()
 
 dict_outlet_size = {"medium": 1, "small": 2, "high": 0}
 dict_item_fat = {"low_fat": 0, "regular_fat": 1}
@@ -44,7 +46,8 @@ def predict():
     try:
         if request.method == "POST":
             feature = request.form
-            print(feature)
+
+            Item_Identifier = feature["Item_Identifier"]
             Item_Weight = float(feature["Item_weight"])
             Item_Fat_Content = dict_item_fat[feature["Item_Fat_Content"]]
             Item_Visibility = float(feature["Item_Visibility"])
@@ -59,12 +62,17 @@ def predict():
             data = []
             for i in request.form.values():
                 data.append(i)
-
+                
             scaled = scaler.transform([[Item_Weight,Item_Fat_Content,Item_Visibility,Item_Type,Item_MRP,Outlet_Identifier,Outlet_Establishment_Year,Outlet_Size,Outlet_Location_Type,Outlet_Type]])
             value = model.predict(scaled)[0]
 
+            cursor.execute('INSERT INTO BigMartData values(?,?,?,?,?,?,?,?,?,?,?,?)',(Item_Identifier,Item_Weight, feature["Item_Fat_Content"] , Item_Visibility, feature["Item_Type"], Item_MRP, feature["Outlet_Identifier"], Outlet_Establishment_Year,feature["Outlet_Size"], feature["Outlet_Location_Type"], feature["Outlet_Type"], float(value)))
+            connection.commit()
+            cursor.close()
+
             return render_template("result.html", value =value, data = data)
-    except:
+    except Exception as e:
+        print(e)
         return redirect("/")
 
 if __name__ == "__main__":
