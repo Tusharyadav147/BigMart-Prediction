@@ -51,6 +51,7 @@ section{
 
 .btn{
     margin-top: 1rem;
+    margin-left: 1.6rem;
     display: inline-block;
     font-size: 1.7rem;
     color:#fff;
@@ -71,20 +72,20 @@ body{
     background-size: 100% 100%;
 }
 
-.order{
+.form{
     position: sticky;
     display: block;
 }
-.order .heading{
+.form .heading{
     text-align: center;
     color:black;
     font-size: 3rem;
     padding-bottom: 2rem;
 }
-.order .hide{
+.form .hide{
     display: none;
 }
-.order form{
+.form form{
     max-width:90rem;
     border-radius: .5rem;
     box-shadow:rgba(0, 0, 0, 0.603);
@@ -93,16 +94,16 @@ body{
     padding:1.5rem;
     margin:0 auto;
 }
-.order form .inputBox{
+.form form .inputBox{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.order form .inputBox .input{
+.form form .inputBox .input{
     width:49%;
 }
-.order form .inputBox .input select{
+.form form .inputBox .input select{
     background:rgba(238, 238, 238, 0.658);
     border-radius: .5rem;
     padding:1rem;
@@ -112,26 +113,26 @@ body{
     margin-bottom: 1rem;
     width:90%;
 }
-.order form .inputBox .input .empty{
+.form form .inputBox .input .empty{
     display: block;
 }
-.order form .inputBox .input .special-type,
-.order form .inputBox .input .sweets-type,
-.order form .inputBox .input .soft-drinks-type,
-.order form .inputBox .input .juice-type,
-.order form .inputBox .input .pizza-type{
+.form form .inputBox .input .special-type,
+.form form .inputBox .input .sweets-type,
+.form form .inputBox .input .soft-drinks-type,
+.form form .inputBox .input .juice-type,
+.form form .inputBox .input .pizza-type{
     display: none;
 }
-.order form .inputBox .input span{
+.form form .inputBox .input span{
     display:block;
     padding:.5rem 0;
     font-size: 1.5rem;
     color:black;
 }
 
-.order form .inputBox .input input,
-.order form .inputBox .input h3,
-.order form .inputBox .input textarea{
+.form form .inputBox .input input,
+.form form .inputBox .input h3,
+.form form .inputBox .input textarea{
     background:rgba(238, 238, 238, 0.658);
     border-radius: .5rem;
     padding:1rem;
@@ -142,23 +143,18 @@ body{
     width:90%;
 }
 
-.order form .inputBox .input input:focus,
-.order form .inputBox .input textarea:focus{
+.form form .inputBox .input input:focus,
+.form form .inputBox .input textarea:focus{
     border:.1rem solid green;
 }
-.order form .inputBox .input h3{
-    cursor:not-allowed;
+.form form .inputBox .input h3{
+    cursor:not-allowform
 }
 
-.order form .inputBox .input textarea{
-    height:20rem;
-    resize: none;
-}
-
-.order form .btn{
+.form form .btn{
     margin-top: 0;
 }
-.order form .value{
+.form form .value{
     padding: 1rem;
     background-color: rgba(206, 162, 19, 0.822);
     border-radius: 1rem;

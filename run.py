@@ -21,7 +21,7 @@ def home():
 
 @app.route("/index", methods = ["POST", "GET"])
 def index():
-    return render_template("index.html", value =0, data = [ ])
+    return render_template("index.html")
 
 @app.route("/loginresult", methods = ["POST", "GET"])
 def login():
@@ -33,7 +33,7 @@ def login():
             print(email)
             print(password)
             if email == "admin147@master.com" and password == "Admin4u$":
-                return render_template("index.html", value =0, data = [ ])
+                return render_template("index.html")
             else:
                 return redirect("/")
     except:
@@ -63,7 +63,7 @@ def predict():
             scaled = scaler.transform([[Item_Weight,Item_Fat_Content,Item_Visibility,Item_Type,Item_MRP,Outlet_Identifier,Outlet_Establishment_Year,Outlet_Size,Outlet_Location_Type,Outlet_Type]])
             value = model.predict(scaled)[0]
 
-            return render_template("index.html", value =value, data = data)
+            return render_template("result.html", value =value, data = data)
     except:
         return redirect("/")
 
