@@ -45,8 +45,9 @@ def login():
 def predict():
     try:
         if request.method == "POST":
-            feature = request.form
+            cursor = connection.cursor()
 
+            feature = request.form
             Item_Identifier = feature["Item_Identifier"]
             Item_Weight = float(feature["Item_weight"])
             Item_Fat_Content = dict_item_fat[feature["Item_Fat_Content"]]
@@ -75,6 +76,17 @@ def predict():
             return render_template("result.html", value =value, data = data)
     except Exception as e:
         print(e)
+        return redirect("/")
+
+@app.route("/table", methods = ["POST", "GET"])
+def table():
+    try:
+        cursor = connection.cursor()
+        cursor.execute("SELECT * FROM BigMartData")
+        r = cursor.fetchall()
+        cursor.close()
+        return render_template("table.html", value = r,)
+    except:
         return redirect("/")
 
 if __name__ == "__main__":

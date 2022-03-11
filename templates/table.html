@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./static/table.css">
+    <link rel="icon" href="./static/logo.png" type="image/x-icon">
+    <title>New Data Stored</title>
+</head>
+<body>
+    <header>
+        <h1>New Predicted Data</h1>
+        <a href="/index">Back</a>
+        <hr>
+    </header>
+    <div class="table">
+    <table>
+        <tr id="header">
+            <th>Item_Identifier</th>
+            <th>Item_Weight</th>
+            <th>Item_Fat_Content</th>
+            <th>Item_Visibility</th>
+            <th>Item_Type</th>
+            <th>Item_MRP</th>
+            <th>Outlet_Identifier</th>
+            <th>Outlet_Establishment_Year</th>
+            <th>Outlet_Size</th>
+            <th>Outlet_Location_Type</th>
+            <th>Outlet_Type</th>
+            <th>Outlet_Sales</th>
+        </tr>
+        {% for row in value %}
+            <tr>
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+                <td>{{row[2]}}</td>
+                <td>{{row[3]}}</td>
+                <td>{{row[4]}}</td>
+                <td>{{row[5]}}</td>
+                <td>{{row[6]}}</td>
+                <td>{{row[7]}}</td>
+                <td>{{row[8]}}</td>
+                <td>{{row[9]}}</td>
+                <td>{{row[10]}}</td>
+                <td>{{row[11]}}</td>
+            </tr>
+        {% endfor %}  
+    </table>
+    </div>
+</body>
+
+</html>

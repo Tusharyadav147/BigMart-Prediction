@@ -71,41 +71,68 @@ body {
     background-color: rgb(206, 229, 250);
 }
 
-@media only screen and (max-width:768px){
+@media(max-width:991px){
+    html{
+        font-size: 65%;
+    }
+    .container{
+        top:30%;
+        left: 36%;
+        height: 40%;
+        width: 35%;
+    }
+    .container a{
+        font-size: 30px;
+        margin-bottom: 1rem ;
+        margin-left: 1rem;
+    }
+    .btn{
+        width: 30%;
+    }
+}
+
+@media(max-width:768px){
+    html{
+        font-size: 60%;
+    }
+    .container{
+        top:30%;
+        left: 26%;
+        height: 300px;
+        width: 215px;
+    }
+    .btn{
+        width: 30%;
+    }
+}
+@media (max-width:550px){
+    html{
+        font-size: 55%;
+    }
+    h1 {
+      display: inline-block;
+      color: brown;
+      margin-left: 5%;
+      font-size: 29px;
+      margin-top: 5%;
+      margin-bottom: 2rem;
+      border-bottom: 3px solid purple;
+      background-color: #f1c6c6;
+      padding: 0.5rem 2rem;
+      border-radius: 2rem;
+    }
     .container {
-        color: white;
-        position: absolute;
-        top: 14%;
-        left: 10%;
+        top: 30%;
+        left: 16%;
+        height: 230px;
+        width: 215px;
     }
-    .container h1 {
-        display: inline-block;
-        color: silver;
-        margin-left: 0rem;
-        margin-top: 3rem;
-        margin-bottom: 0rem;
-        border-bottom: 5px solid rgba(230, 183, 231, 0.863);
+    .container a{
+        font-size: 25px;
+        margin-bottom: 1rem ;
+        margin-left: 1rem;
     }
-    .box input {
-        background: none;
-        width: 73%;
-        border: none;
-        font-size: 18px;
-    }
-    .box {
-        margin-top: 1.5rem;
-        width: 90%;
-        border-bottom: 2px solid purple;
-    }
-    .btn1 {
-        cursor: pointer;
-        border-radius: 2rem;
-        border: 2px solid black;
-        outline: none;
-        width: 40%;
-        margin-left: 8rem;
-        padding: .5rem;
-        margin-top: 2rem;
-        position: absolute;
+    .btn{
+        width: 30%;
     }
 }
