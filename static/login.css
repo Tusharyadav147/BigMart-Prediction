@@ -41,6 +41,7 @@ body {
 
 .box input{
     background: none;
+    color: aliceblue;
     width: 82%;
     border: none;
     font-size: 18px;
