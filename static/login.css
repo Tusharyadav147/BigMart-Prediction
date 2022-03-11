@@ -46,10 +46,6 @@ body {
     font-size: 18px;
 }
 
-.box input:hover{
-    background-color: white;
-}
-
 .box i{
     margin-top: 1rem;
     text-align: center;
