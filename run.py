@@ -13,7 +13,7 @@ dict_Item_Type = {"dairy": 4,"soft_drinks": 14,"meat": 10,"Fruits_and_vegetables
 dict_Outlet_Identifier = {"OUT049":9,"OUT018":3,"OUT010":0,"OUT013": 1,"OUT027": 5,"OUT045":7,"OUT017": 2,"OUT046": 8,"OUT035": 6,"OUT019":4}
 
 
-model = pickle.load(open("Store Sales Prediction.pkl", "rb"))
+model = pickle.load(open("BigMart Prediction Model.pkl", "rb"))
 scaler = pickle.load(open("Standarscaler.pkl", "rb"))
 
 app = Flask(__name__)
